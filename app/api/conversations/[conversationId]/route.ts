@@ -1,5 +1,4 @@
 import getCurrentUser from "@/app/actions/getCurrentUser";
-import useConversation from "@/app/hooks/useConversation";
 import client from "@/app/libs/prismadb";
 import { pusherServer } from "@/app/libs/pusher";
 import { NextResponse } from "next/server";
@@ -10,7 +9,7 @@ interface IParams {
 
 export async function DELETE(request: Request, { params }: { params: IParams }) {
     try {
-        const { conversationId } = useConversation();
+        const { conversationId } = params;
         const currentUser = await getCurrentUser();
 
         if (!currentUser?.id || !currentUser?.email) {

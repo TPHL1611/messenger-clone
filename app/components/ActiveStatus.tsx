@@ -8,10 +8,12 @@ interface ActiveStatusProps {
 }
 
 const ActiveStatus = ({ user }: ActiveStatusProps) => {
-    useActiveChannel();
-    const active = useActiveList();
+    if (user?.email) {
+        useActiveChannel();
+        const active = useActiveList();
 
-    return <div>Active</div>;
+        return <div>Active</div>;
+    }
 };
 
 export default ActiveStatus;

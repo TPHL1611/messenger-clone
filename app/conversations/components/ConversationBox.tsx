@@ -42,7 +42,7 @@ const ConversationBox = ({ data, selected }: ConversationBoxProps) => {
         if (!userEmail) return false;
 
         return seenArray.filter((user) => user.email === userEmail).length !== 0;
-    }, []);
+    }, [lastMessage, userEmail]);
 
     const lastMessageText = useMemo(() => {
         if (lastMessage?.image) {

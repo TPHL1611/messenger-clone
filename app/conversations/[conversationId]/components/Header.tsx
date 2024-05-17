@@ -32,7 +32,7 @@ const Header = ({ conversation }: HeaderProps) => {
         }
 
         return isActive ? "Active" : "Offline";
-    }, [conversation]);
+    }, [conversation, isActive]);
 
     return (
         <>
